@@ -44,8 +44,21 @@ python verify.py
 
 `verify.py` checks the three things that matter: the payload is `manifest.json` byte for byte, the
 envelope's version agrees with the payload's, and the signature verifies against
-`catalog-public-key.txt`. The same script runs on every pull request, so a manifest edited without
-re-signing cannot land.
+`catalog-public-key.txt`. It needs no secret, so it also runs on forks.
+
+The same script is a **required status check on `main`**, which is what makes "cannot land" literal
+rather than advisory:
+
+- every change to `main` goes through a pull request, and `verify` must be green before it merges
+- the rule applies to administrators too, so nobody can push past it
+- force pushes and branch deletion are refused, so a published catalog cannot be rewritten
+
+A direct push of a mismatched pair is rejected by the server:
+
+```
+remote: - Required status check "verify" is expected.
+ ! [remote rejected] main -> main (protected branch hook declined)
+```
 
 ## Changing the catalog
 
