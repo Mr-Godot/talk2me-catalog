@@ -1,0 +1,5 @@
+# The catalog is SIGNED over its exact bytes, and CI compares them byte for byte. No line-ending
+# translation, ever: a checkout that rewrote LF to CRLF would break the comparison invisibly.
+manifest.json          -text
+manifest.signed.json   -text
+catalog-public-key.txt -text

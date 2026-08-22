@@ -1,0 +1,27 @@
+name: verify
+
+# A manifest edited without re-signing is invisible to a reader and fatal to every installed app:
+# they keep serving the old catalog while this repository shows the new one. This is the gate that
+# makes that impossible to merge. It needs no secret, so it runs on forks too.
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install cryptography
+        run: pip install --disable-pip-version-check cryptography
+
+      - name: The signed pair must agree, and the signature must verify
+        run: python verify.py
