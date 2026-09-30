@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.18.2",
+  "version": "2.18.3",
   "date": "2026-09-30",
-  "notes": "Its violet drifts slowly and at random between 60 and 100 percent, in the logo and while it listens.\nA click on the ring after an error opens Home at the failed result. Anywhere else, clicks go through it as before.\nThe menu bar icon is the new ring.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.18.2/talk2me-2.18.2-macos-arm64.zip",
-  "sha256": "a2d9af2507a0a9f33fe689e2ebfb64bc0c129b8245a838feb4574deb6da98edc",
-  "size": 120139041,
+  "notes": "On a Mac with the GPU path and 16 GB or more, Cohere Transcribe on the GPU is the top pick: the best quality we measured, and faster than Qwen3 on the same clips.\nCohere finds your language as you speak: English, French or any of its 14 languages. It listens to your first words while you hold the keys, so the text comes as fast as before (17 ms at the median, measured). When it is unsure, it keeps your last language.\n\"I speak\": pick your languages on Cohere's language row. With one language, talk2me never guesses.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.18.3/talk2me-2.18.3-macos-arm64.zip",
+  "sha256": "ffc5dfc11b87c740b42f4548fd05865597206c1aa72b7aa9b523202c6ab97cd9",
+  "size": 120322858,
   "minimumMacOS": "13.0"
 }
