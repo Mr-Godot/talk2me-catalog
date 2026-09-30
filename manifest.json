@@ -1,9 +1,9 @@
 {
   "schemaVersion": 1,
-  "version": "1.1.0",
-  "updatedAt": "2026-08-22T00:00:00Z",
-  "expiresAt": "2026-11-20T00:00:00Z",
-  "revocations": [],
+  "version": "1.2.0",
+  "updatedAt": "2026-09-29T00:00:00Z",
+  "expiresAt": "2027-04-01T00:00:00Z",
+  "revocations": ["distil-whisper-large-v3-en"],
   "providers": [
     {
       "id": "groq",
@@ -17,7 +17,7 @@
       "notes": "Whisper on Groq. The fastest and cheapest cloud option, and the only one where a solo user can switch zero data retention on without a sales call.",
       "privacy": {
         "trainsOnInput": "never",
-        "retentionDays": 0,
+        "retentionDays": 30,
         "zeroRetention": "self-serve",
         "policyUrl": "https://console.groq.com/docs/your-data"
       },
@@ -44,15 +44,17 @@
           "notes": "Slower than Turbo for a small accuracy gain on hard audio.",
           "approxPricePerMinute": 0.00185,
           "languages": ["*"]
-        },
+        }
+      ],
+      "chatModels": [
         {
-          "id": "distil-whisper-large-v3-en",
-          "display": "Distil Whisper (English)",
-          "rank": 3,
-          "tags": ["voice", "fast", "cheap"],
-          "notes": "English only. Fast, and the cheapest of the three.",
-          "approxPricePerMinute": 0.00033,
-          "languages": ["en"]
+          "id": "openai/gpt-oss-20b",
+          "display": "GPT-OSS 20B",
+          "rank": 1,
+          "tags": ["chat", "recommended"],
+          "notes": "Fast enough to run on every transcript. Priced per token, at $0.075 per million in and $0.30 per million out.",
+          "approxPricePerMinute": null,
+          "languages": ["*"]
         }
       ]
     },
@@ -65,12 +67,12 @@
       "secretKeyName": "openai-api-key",
       "modelsEndpoint": true,
       "rank": 2,
-      "notes": "The most accurate general purpose cloud option. Audio is held up to 30 days for abuse review and is never trained on.",
+      "notes": "The most accurate general purpose cloud option. The 30 day figure below is the account default; OpenAI's own table for the transcriptions endpoint lists abuse log retention of None.",
       "privacy": {
         "trainsOnInput": "never",
         "retentionDays": 30,
         "zeroRetention": "enterprise",
-        "policyUrl": "https://platform.openai.com/docs/guides/your-data"
+        "policyUrl": "https://developers.openai.com/api/docs/guides/your-data"
       },
       "discovery": {
         "include": "(transcribe|whisper|stt)",
@@ -120,38 +122,184 @@
             "notice": "OpenAI now recommends GPT Transcribe. Same key, lower price, fewer errors."
           }
         }
+      ],
+      "chatModels": [
+        {
+          "id": "gpt-4o-mini",
+          "display": "GPT-4o mini",
+          "rank": 1,
+          "tags": ["chat"],
+          "notes": "Per-token price not yet recorded in the catalog.",
+          "approxPricePerMinute": null,
+          "languages": ["*"]
+        }
       ]
     },
     {
-      "id": "mistral",
-      "displayName": "Mistral",
+      "id": "deepinfra",
+      "displayName": "DeepInfra",
       "kind": "openai-compatible",
-      "baseUrl": "https://api.mistral.ai/v1",
-      "keyHelpUrl": "https://console.mistral.ai/api-keys",
-      "secretKeyName": "mistral-api-key",
+      "baseUrl": "https://api.deepinfra.com/v1/openai",
+      "keyHelpUrl": "https://deepinfra.com/dash/api_keys",
+      "secretKeyName": "deepinfra-api-key",
       "modelsEndpoint": true,
-      "rank": 3,
-      "notes": "Voxtral, hosted in the EU. The free Experiment tier trains on what you send it, so use a paid key.",
+      "rank": 4,
+      "notes": "The cheapest hosted Whisper measured on 29 August 2026, on the same OpenAI audio path as Groq.",
       "privacy": {
-        "trainsOnInput": "opt-out-required",
-        "retentionDays": 30,
-        "zeroRetention": "enterprise",
-        "policyUrl": "https://docs.mistral.ai/admin/monitor-comply/zero-data-retention"
+        "trainsOnInput": "never",
+        "retentionDays": 0,
+        "zeroRetention": "default",
+        "policyUrl": "https://docs.deepinfra.com/account/data-privacy"
       },
       "discovery": {
-        "include": "(voxtral|transcribe)",
-        "exclude": "",
+        "include": "(whisper|voxtral|transcribe|stt)",
+        "exclude": "(tts|embedding|rerank)",
         "maxNewEntries": 5
       },
       "models": [
         {
-          "id": "voxtral-mini-2602",
-          "display": "Voxtral Mini",
+          "id": "openai/whisper-large-v3-turbo",
+          "display": "Whisper Large v3 Turbo",
           "rank": 1,
-          "tags": ["voice", "recommended", "cheap"],
-          "notes": "EU hosted, cheap, and strong on the 13 languages it covers.",
-          "approxPricePerMinute": 0.003,
+          "tags": ["voice", "recommended", "fast", "cheap", "multilingual"],
+          "notes": "The cheapest Whisper on this list, at under a third of what Groq charges for the same model.",
+          "approxPricePerMinute": 0.0002,
+          "languages": ["*"]
+        },
+        {
+          "id": "openai/whisper-large-v3",
+          "display": "Whisper Large v3",
+          "rank": 2,
+          "tags": ["voice", "cheap", "multilingual"],
+          "notes": "The larger Whisper for hard audio, still cheaper than Groq Turbo.",
+          "approxPricePerMinute": 0.00045,
+          "languages": ["*"]
+        },
+        {
+          "id": "mistralai/Voxtral-Mini-3B-2507",
+          "display": "Voxtral Mini 3B (2507)",
+          "rank": 3,
+          "tags": ["voice", "cheap"],
+          "notes": "The 2507 generation, which is not the same model as Mistral's own 2602 Mini and has no measured accuracy row.",
+          "approxPricePerMinute": 0.001,
           "languages": ["en", "fr", "de", "es", "it", "pt", "nl", "hi", "ar", "ru", "zh", "ja", "ko"]
+        }
+      ]
+    },
+    {
+      "id": "together",
+      "displayName": "Together AI",
+      "kind": "openai-compatible",
+      "baseUrl": "https://api.together.ai/v1",
+      "keyHelpUrl": "https://api.together.ai/settings/api-keys",
+      "secretKeyName": "together-api-key",
+      "modelsEndpoint": true,
+      "rank": 5,
+      "notes": "Hosted Parakeet on the same OpenAI audio path as Whisper, so one key reaches both.",
+      "privacy": {
+        "trainsOnInput": "never",
+        "retentionDays": null,
+        "zeroRetention": "self-serve",
+        "policyUrl": "https://docs.together.ai/docs/privacy-and-security"
+      },
+      "discovery": {
+        "include": "(whisper|parakeet|nemotron|transcribe|stt)",
+        "exclude": "(tts|embedding|rerank)",
+        "maxNewEntries": 5
+      },
+      "models": [
+        {
+          "id": "nvidia/parakeet-tdt-0.6b-v3",
+          "display": "Parakeet TDT 0.6B v3",
+          "rank": 1,
+          "tags": ["voice", "recommended", "accurate"],
+          "notes": "Measured at 4.5 percent word error rate, a little ahead of Groq Turbo, for twice the price.",
+          "approxPricePerMinute": 0.0015,
+          "languages": []
+        },
+        {
+          "id": "openai/whisper-large-v3",
+          "display": "Whisper Large v3",
+          "rank": 2,
+          "tags": ["voice", "multilingual"],
+          "notes": "Whisper large v3 on the same key as Parakeet.",
+          "approxPricePerMinute": 0.0015,
+          "languages": ["*"]
+        }
+      ]
+    },
+    {
+      "id": "fireworks",
+      "displayName": "Fireworks AI",
+      "kind": "openai-compatible",
+      "baseUrl": "https://api.fireworks.ai/inference/v1",
+      "keyHelpUrl": "https://fireworks.ai/account/api-keys",
+      "secretKeyName": "fireworks-api-key",
+      "modelsEndpoint": true,
+      "rank": 6,
+      "notes": "Whisper turbo and large on the OpenAI audio path. The Fireworks data handling page answered 404 on 29 August 2026, so the retention and training rows below say unknown rather than repeating what a summary claimed.",
+      "privacy": {
+        "trainsOnInput": "unknown",
+        "retentionDays": null,
+        "zeroRetention": "unknown",
+        "policyUrl": ""
+      },
+      "discovery": {
+        "include": "(whisper|transcribe|stt)",
+        "exclude": "(tts|embedding|rerank)",
+        "maxNewEntries": 5
+      },
+      "models": [
+        {
+          "id": "whisper-v3-turbo",
+          "display": "Whisper v3 Turbo",
+          "rank": 1,
+          "tags": ["voice", "recommended", "fast", "multilingual"],
+          "notes": "Whisper Turbo, a little above Groq on price.",
+          "approxPricePerMinute": 0.0009,
+          "languages": ["*"]
+        },
+        {
+          "id": "whisper-v3-large",
+          "display": "Whisper v3 Large",
+          "rank": 2,
+          "tags": ["voice", "multilingual"],
+          "notes": "The larger Whisper, for hard audio.",
+          "approxPricePerMinute": 0.0015,
+          "languages": ["*"]
+        }
+      ]
+    },
+    {
+      "id": "openrouter",
+      "displayName": "OpenRouter",
+      "kind": "openai-compatible",
+      "baseUrl": "https://openrouter.ai/api/v1",
+      "keyHelpUrl": "https://openrouter.ai/keys",
+      "secretKeyName": "openrouter-api-key",
+      "modelsEndpoint": true,
+      "rank": 7,
+      "notes": "One key that reaches many hosts. Each request is served by whichever host the router picks, and that host sets its own terms.",
+      "privacy": {
+        "trainsOnInput": "unknown",
+        "retentionDays": null,
+        "zeroRetention": "unknown",
+        "policyUrl": ""
+      },
+      "discovery": {
+        "include": "(whisper|transcribe|stt)",
+        "exclude": "(tts|embedding|rerank)",
+        "maxNewEntries": 5
+      },
+      "models": [
+        {
+          "id": "openai/whisper-large-v3",
+          "display": "Whisper Large v3",
+          "rank": 1,
+          "tags": ["voice", "recommended", "cheap", "multilingual"],
+          "notes": "Whisper large v3 through the router, billed by the second.",
+          "approxPricePerMinute": 0.00048,
+          "languages": ["*"]
         }
       ]
     },
@@ -187,7 +335,7 @@
       "secretKeyName": "deepgram-api-key",
       "modelsEndpoint": true,
       "rank": 10,
-      "notes": "Not connectable in this build: Deepgram does not speak the OpenAI audio API. Listed so the catalog stays honest about what exists.",
+      "notes": "Nova 3, on the Deepgram listen API rather than the OpenAI audio API. Every request this app sends carries mip_opt_out=true, the parameter named under requiredParams below.",
       "privacy": {
         "trainsOnInput": "opt-out-required",
         "retentionDays": null,
@@ -207,7 +355,7 @@
           "id": "nova-3",
           "display": "Nova 3",
           "rank": 1,
-          "tags": ["voice", "fast"],
+          "tags": ["voice", "recommended", "fast"],
           "notes": "The fastest measured throughput anywhere. Every request must carry mip_opt_out=true or Deepgram trains on your audio.",
           "approxPricePerMinute": 0.0043,
           "languages": ["*"]
@@ -223,7 +371,7 @@
       "secretKeyName": "elevenlabs-api-key",
       "modelsEndpoint": false,
       "rank": 11,
-      "notes": "Not connectable in this build: ElevenLabs uses its own speech to text API, and its model list endpoint does not return Scribe.",
+      "notes": "Scribe, on the ElevenLabs speech to text API rather than the OpenAI audio API. The key goes in an xi-api-key header, and the model list endpoint does not return Scribe, so pick the row below rather than fetching.",
       "privacy": {
         "trainsOnInput": "unknown",
         "retentionDays": null,
@@ -235,7 +383,7 @@
           "id": "scribe_v2",
           "display": "Scribe v2",
           "rank": 1,
-          "tags": ["voice", "accurate", "multilingual"],
+          "tags": ["voice", "recommended", "accurate", "multilingual"],
           "notes": "Second best measured accuracy of any cloud model. Audio is logged unless you are on an enterprise plan.",
           "approxPricePerMinute": 0.0037,
           "languages": ["*"]
@@ -251,7 +399,7 @@
       "secretKeyName": "xai-api-key",
       "modelsEndpoint": true,
       "rank": 12,
-      "notes": "Not connectable in this build: Grok speech to text sits on its own /v1/stt surface, not the OpenAI audio API.",
+      "notes": "Grok speech to text, on xAI's own /v1/stt surface rather than the OpenAI audio API. The endpoint publishes no model field, so the row below is what this app calls it, not what goes on the wire.",
       "privacy": {
         "trainsOnInput": "never",
         "retentionDays": 30,
@@ -263,10 +411,94 @@
           "id": "grok-stt",
           "display": "Grok STT",
           "rank": 1,
-          "tags": ["voice", "cheap"],
+          "tags": ["voice", "recommended", "cheap"],
           "notes": "Cheap, 24 languages, and xAI does not train on API input.",
           "approxPricePerMinute": 0.00167,
           "languages": ["en", "fr", "de", "es", "it", "pt", "nl", "pl", "ru", "uk", "tr", "ar", "hi", "ja", "ko", "zh", "sv", "da", "no", "fi", "cs", "el", "he", "id"]
+        }
+      ]
+    },
+    {
+      "id": "assemblyai",
+      "displayName": "AssemblyAI",
+      "kind": "assemblyai-transcript",
+      "baseUrl": "https://api.assemblyai.com/v2",
+      "keyHelpUrl": "https://www.assemblyai.com/dashboard/api-keys",
+      "secretKeyName": "assemblyai-api-key",
+      "modelsEndpoint": false,
+      "rank": 13,
+      "notes": "Not connectable in this build: AssemblyAI uploads the audio, starts a job and is polled for the result, which is a different shape from every wire this app speaks.",
+      "privacy": {
+        "trainsOnInput": "opt-out-required",
+        "retentionDays": null,
+        "zeroRetention": "self-serve",
+        "policyUrl": "https://www.assemblyai.com/security"
+      },
+      "models": [
+        {
+          "id": "universal-3-5-pro",
+          "display": "Universal 3.5 Pro",
+          "rank": 1,
+          "tags": ["voice", "recommended", "accurate", "multilingual"],
+          "notes": "Accuracy near the top of the measured field, and both the training opt-out and zero retention can be switched on without a sales call.",
+          "approxPricePerMinute": 0.0035,
+          "languages": ["*"]
+        }
+      ]
+    },
+    {
+      "id": "soniox",
+      "displayName": "Soniox",
+      "kind": "soniox-stt",
+      "baseUrl": "https://api.soniox.com/v1",
+      "keyHelpUrl": "https://console.soniox.com/",
+      "secretKeyName": "soniox-api-key",
+      "modelsEndpoint": false,
+      "rank": 14,
+      "notes": "Not connectable in this build: Soniox has its own transcription API rather than the OpenAI audio API.",
+      "privacy": {
+        "trainsOnInput": "never",
+        "retentionDays": null,
+        "zeroRetention": "default",
+        "policyUrl": "https://soniox.com/policies/privacy-policy"
+      },
+      "models": [
+        {
+          "id": "stt-async-v5",
+          "display": "Soniox v5",
+          "rank": 1,
+          "tags": ["voice", "recommended", "cheap", "multilingual"],
+          "notes": "The cheapest accurate cloud model measured this year, with speaker labels included rather than billed separately.",
+          "approxPricePerMinute": 0.00167,
+          "languages": ["*"]
+        }
+      ]
+    },
+    {
+      "id": "gladia",
+      "displayName": "Gladia",
+      "kind": "gladia-v2",
+      "baseUrl": "https://api.gladia.io/v2",
+      "keyHelpUrl": "https://app.gladia.io/",
+      "secretKeyName": "gladia-api-key",
+      "modelsEndpoint": false,
+      "rank": 15,
+      "notes": "Not connectable in this build: Gladia takes a job over its own REST API and returns the result over a socket.",
+      "privacy": {
+        "trainsOnInput": "opt-out-required",
+        "retentionDays": null,
+        "zeroRetention": "enterprise",
+        "policyUrl": "https://www.gladia.io/security"
+      },
+      "models": [
+        {
+          "id": "solaria-3",
+          "display": "Solaria 3",
+          "rank": 1,
+          "tags": ["voice", "recommended", "accurate", "multilingual"],
+          "notes": "Built for European and English audio, and it switches between French and English inside one sentence.",
+          "approxPricePerMinute": 0.0102,
+          "languages": ["*"]
         }
       ]
     }
@@ -278,16 +510,16 @@
       "engine": "whisper-cpp",
       "fileName": "ggml-small.en.bin",
       "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.en.bin",
-      "sizeBytes": 511696896,
+      "sizeBytes": 487614201,
       "sizeLabel": "488 MB",
-      "sha256": null,
+      "sha256": "c6138d6d58ecc8322097e0f987c32f1be8bb0a18532a3f88f734d1bbf9c41e5d",
       "rank": 1,
       "tags": ["voice", "recommended"],
       "recommendedFor": ["cpu"],
       "platforms": ["windows", "linux", "macos"],
       "gpuBackends": ["cpu", "vulkan", "cuda", "metal", "coreml", "rocm"],
       "languages": ["en"],
-      "notes": "The right first download on a machine with no usable GPU. English only."
+      "notes": "Small enough to run at a usable speed on the processor alone, at 488 MB. English only."
     },
     {
       "id": "small",
@@ -295,9 +527,9 @@
       "engine": "whisper-cpp",
       "fileName": "ggml-small.bin",
       "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-small.bin",
-      "sizeBytes": 511696896,
+      "sizeBytes": 487601967,
       "sizeLabel": "488 MB",
-      "sha256": null,
+      "sha256": "1be3a9b2063867b937e64e2ec7483364a79917e157fa98c5d94b5c1fffea987b",
       "rank": 2,
       "tags": ["voice", "recommended", "multilingual"],
       "recommendedFor": ["cpu"],
@@ -312,9 +544,9 @@
       "engine": "whisper-cpp",
       "fileName": "ggml-large-v3-turbo.bin",
       "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo.bin",
-      "sizeBytes": 1677721600,
+      "sizeBytes": 1624555275,
       "sizeLabel": "1.6 GB",
-      "sha256": null,
+      "sha256": "1fc70f774d38eb169993ac391eea357ef47c88757ef72ee5943879b7e8e2bc69",
       "rank": 3,
       "tags": ["voice", "recommended", "accurate", "multilingual"],
       "recommendedFor": ["gpu"],
@@ -329,9 +561,9 @@
       "engine": "whisper-cpp",
       "fileName": "ggml-large-v3-turbo-q5_0.bin",
       "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3-turbo-q5_0.bin",
-      "sizeBytes": 573648384,
-      "sizeLabel": "547 MB",
-      "sha256": null,
+      "sizeBytes": 574041195,
+      "sizeLabel": "574 MB",
+      "sha256": "394221709cd5ad1f40c46e6031ca61bce88931e6e088c188294c6d5a55ffa7e2",
       "rank": 4,
       "tags": ["voice", "multilingual"],
       "recommendedFor": ["cpu", "gpu"],
@@ -346,9 +578,9 @@
       "engine": "whisper-cpp",
       "fileName": "ggml-base.en.bin",
       "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-base.en.bin",
-      "sizeBytes": 155189248,
+      "sizeBytes": 147964211,
       "sizeLabel": "148 MB",
-      "sha256": null,
+      "sha256": "a03779c86df3323075f5e796cb2ce5029f00ec8869eee3fdfb897afe36c6d002",
       "rank": 5,
       "tags": ["voice", "fast"],
       "recommendedFor": ["cpu"],
@@ -363,9 +595,9 @@
       "engine": "whisper-cpp",
       "fileName": "ggml-large-v3.bin",
       "url": "https://huggingface.co/ggerganov/whisper.cpp/resolve/main/ggml-large-v3.bin",
-      "sizeBytes": 3250585600,
+      "sizeBytes": 3095033483,
       "sizeLabel": "3.1 GB",
-      "sha256": null,
+      "sha256": "64d182b440b98d5203c4f9bd541544d84c605196c4f7b845dfa11fb23594d1e2",
       "rank": 6,
       "tags": ["voice", "accurate", "multilingual"],
       "recommendedFor": ["gpu"],
@@ -373,6 +605,85 @@
       "gpuBackends": ["cpu", "vulkan", "cuda", "metal", "coreml", "rocm"],
       "languages": ["*"],
       "notes": "The most accurate local model, and the slowest. Only worth it with a GPU and the disk to spare."
+    }
+  ],
+  "engineModels": [
+    {
+      "id": "parakeet-tdt-0.6b-v3-int8",
+      "display": "Parakeet TDT 0.6B v3 (int8)",
+      "engine": "sherpa-onnx-transducer",
+      "modelType": "nemo_transducer",
+      "files": [
+        {
+          "name": "encoder.int8.onnx",
+          "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/main/encoder.int8.onnx",
+          "sizeBytes": 652184281,
+          "sha256": "acfc2b4456377e15d04f0243af540b7fe7c992f8d898d751cf134c3a55fd2247"
+        },
+        {
+          "name": "decoder.int8.onnx",
+          "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/main/decoder.int8.onnx",
+          "sizeBytes": 11845275,
+          "sha256": "179e50c43d1a9de79c8a24149a2f9bac6eb5981823f2a2ed88d655b24248db4e"
+        },
+        {
+          "name": "joiner.int8.onnx",
+          "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/main/joiner.int8.onnx",
+          "sizeBytes": 6355277,
+          "sha256": "3164c13fc2821009440d20fcb5fdc78bff28b4db2f8d0f0b329101719c0948b3"
+        },
+        {
+          "name": "tokens.txt",
+          "url": "https://huggingface.co/csukuangfj/sherpa-onnx-nemo-parakeet-tdt-0.6b-v3-int8/resolve/main/tokens.txt",
+          "sizeBytes": 93939,
+          "sha256": "d58544679ea4bc6ac563d1f545eb7d474bd6cfa467f0a6e2c1dc1c7d37e3c35d"
+        }
+      ],
+      "rank": 1,
+      "tags": [
+        "voice",
+        "multilingual",
+        "fast"
+      ],
+      "recommendedFor": [
+        "cpu"
+      ],
+      "platforms": [
+        "windows",
+        "linux",
+        "macos"
+      ],
+      "gpuBackends": [
+        "cpu"
+      ],
+      "languages": [
+        "en",
+        "es",
+        "fr",
+        "de",
+        "bg",
+        "hr",
+        "cs",
+        "da",
+        "nl",
+        "et",
+        "fi",
+        "el",
+        "hu",
+        "it",
+        "lv",
+        "lt",
+        "mt",
+        "pl",
+        "pt",
+        "ro",
+        "sk",
+        "sl",
+        "sv",
+        "ru",
+        "uk"
+      ],
+      "notes": "Runs on the processor, 25 languages, and it is quick there. Four files, 640 MB together."
     }
   ]
 }
