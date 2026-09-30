@@ -1,0 +1,12 @@
+{
+  "feed": "talk2me-update",
+  "feedVersion": 1,
+  "platform": "macos-arm64",
+  "version": "2.18.2",
+  "date": "2026-09-30",
+  "notes": "Its violet drifts slowly and at random between 60 and 100 percent, in the logo and while it listens.\nA click on the ring after an error opens Home at the failed result. Anywhere else, clicks go through it as before.\nThe menu bar icon is the new ring.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.18.2/talk2me-2.18.2-macos-arm64.zip",
+  "sha256": "a2d9af2507a0a9f33fe689e2ebfb64bc0c129b8245a838feb4574deb6da98edc",
+  "size": 120139041,
+  "minimumMacOS": "13.0"
+}
