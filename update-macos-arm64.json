@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.18.3",
+  "version": "2.19.0",
   "date": "2026-09-30",
-  "notes": "On a Mac with the GPU path and 16 GB or more, Cohere Transcribe on the GPU is the top pick: the best quality we measured, and faster than Qwen3 on the same clips.\nCohere finds your language as you speak: English, French or any of its 14 languages. It listens to your first words while you hold the keys, so the text comes as fast as before (17 ms at the median, measured). When it is unsure, it keeps your last language.\n\"I speak\": pick your languages on Cohere's language row. With one language, talk2me never guesses.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.18.3/talk2me-2.18.3-macos-arm64.zip",
-  "sha256": "ffc5dfc11b87c740b42f4548fd05865597206c1aa72b7aa9b523202c6ab97cd9",
-  "size": 120322858,
+  "notes": "A pause in the middle of a phrase no longer ends the sentence. A long pause is heard shortened, a sentence broken at a pause or a restart (\"do we? How do we\") is joined back, and a long dictation's 30 s pieces no longer add a period where they meet.\nMeasured on real recorded speech: on Cohere and Whisper the breaks a pause made went to 0, with no real sentence end joined by mistake.\n\"Update now\" sits beside \"Check now\" in Settings > Advanced, so you never need a trip to Home.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.19.0/talk2me-2.19.0-macos-arm64.zip",
+  "sha256": "da9606df278449d1b478a5ab2ab56c9907021aa9c440616288ce12723f455c34",
+  "size": 120386604,
   "minimumMacOS": "13.0"
 }
