@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.19.0",
-  "date": "2026-09-30",
-  "notes": "A pause in the middle of a phrase no longer ends the sentence. A long pause is heard shortened, a sentence broken at a pause or a restart (\"do we? How do we\") is joined back, and a long dictation's 30 s pieces no longer add a period where they meet.\nMeasured on real recorded speech: on Cohere and Whisper the breaks a pause made went to 0, with no real sentence end joined by mistake.\n\"Update now\" sits beside \"Check now\" in Settings > Advanced, so you never need a trip to Home.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.19.0/talk2me-2.19.0-macos-arm64.zip",
-  "sha256": "da9606df278449d1b478a5ab2ab56c9907021aa9c440616288ce12723f455c34",
-  "size": 120386604,
+  "version": "2.19.1",
+  "date": "2026-10-01",
+  "notes": "A dictation can last 10 minutes, up from 2. If you had set 2 minutes yourself, set it again in Settings > Advanced.\n15 seconds before the limit, a thin arc counts down on the ring. At the limit your words go in, and the ring says why it stopped.\ntalk2me turns a long dictation into words while you talk: after 10 minutes you wait under a second, not 15. A dictation under 45 seconds is decoded whole, as before.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.19.1/talk2me-2.19.1-macos-arm64.zip",
+  "sha256": "eb5dbccfae2b7a3856777a39a0b520b4b06bcc87971652bf9d8afe0ef342776e",
+  "size": 119636445,
   "minimumMacOS": "13.0"
 }
