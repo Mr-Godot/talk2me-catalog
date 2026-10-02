@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.19.1",
-  "date": "2026-10-01",
-  "notes": "A dictation can last 10 minutes, up from 2. If you had set 2 minutes yourself, set it again in Settings > Advanced.\n15 seconds before the limit, a thin arc counts down on the ring. At the limit your words go in, and the ring says why it stopped.\ntalk2me turns a long dictation into words while you talk: after 10 minutes you wait under a second, not 15. A dictation under 45 seconds is decoded whole, as before.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.19.1/talk2me-2.19.1-macos-arm64.zip",
-  "sha256": "eb5dbccfae2b7a3856777a39a0b520b4b06bcc87971652bf9d8afe0ef342776e",
-  "size": 119636445,
+  "version": "2.20.0",
+  "date": "2026-10-02",
+  "notes": "First launch now opens on \"Welcome to talk2me\" and a big, lively ring. After a few seconds it flies to its spot on your dashboard and keeps spinning there.\nThe tour happens right on the dashboard: each part shows up as it is explained, the ring, the voice model, your keys, then your results.\nSkip the tour at any point and the whole dashboard appears at once. Your voice model still downloads.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.20.0/talk2me-2.20.0-macos-arm64.zip",
+  "sha256": "fa0cbd555ab64e9acd9b2b749b61568a53f7759a97362565fddeefc8c4f83c32",
+  "size": 120699953,
   "minimumMacOS": "13.0"
 }
