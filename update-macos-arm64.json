@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.0",
+  "version": "2.21.1",
   "date": "2026-10-03",
-  "notes": "The ring's flight from the welcome to your dashboard is one smooth glide, drawn at your screen's own rate, and it keeps spinning the whole way, with no restart and no change of speed when it lands.\n\"Welcome to talk2me\" stays until the ring is in its place, then fades out. Your dashboard fills in after that, its status card fading in gently.\nEach step of the tour now sits right next to the part of the dashboard it explains, with a small pointer at it. That part glows softly and the rest is dimmed.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.0/talk2me-2.21.0-macos-arm64.zip",
-  "sha256": "4a351118cc55bb5b4a3d6f26bcadb18ef4f2cd7eb5fcc31e7c5866fc9a4d0f7f",
-  "size": 149929490,
+  "notes": "talk2me no longer quits when you allow the microphone or Accessibility during the tour. The crash came from a status line that went blank while macOS was reading the window for its permission prompt, VoiceOver or another app that reads the screen. Every line that is read aloud as it changes is now safe to go blank.\nPicking Deny when macOS asks about the Keychain no longer leaves your shortcut dead until you restart talk2me.\nAn unexpected error inside the window no longer closes talk2me; it is noted in the diagnostic log and the app keeps going.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.1/talk2me-2.21.1-macos-arm64.zip",
+  "sha256": "eb62cda056a5ec9db028f47998e62e1c3ecbaa679184a4f1062e3a3878203ba0",
+  "size": 149930149,
   "minimumMacOS": "13.0"
 }
