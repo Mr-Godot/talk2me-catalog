@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.2",
+  "version": "2.21.3",
   "date": "2026-10-03",
-  "notes": "talk2me now needs macOS 15 or later. Its voice models on your Mac cannot load on older macOS, so an older Mac is told up front instead of downloading a voice that cannot run. Every Mac with Apple silicon can update to macOS 15 for free.\nDeleting a cleanup model that runs on your Mac's GPU no longer freezes the window while a cleanup finishes.\nIf talk2me cannot start, a window now says so and where the log is, instead of the app vanishing.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.2/talk2me-2.21.2-macos-arm64.zip",
-  "sha256": "ef7de470a83949f6837c1d525527dec04913346fed18a0a38983e6e33f492d0e",
-  "size": 149933635,
+  "notes": "Your words starts with talk2me's own name only. It used to arrive with five names that meant something only to us.\nBefore macOS has asked anything, the microphone line says \"macOS will ask you\", not \"asks you again\".\nThe tour's card stays with the part of Home it points at when Home moves under it.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.3/talk2me-2.21.3-macos-arm64.zip",
+  "sha256": "9db8f5e917b79324323f770556e9aad76881cda1ccd08d755a9e287bfc04c988",
+  "size": 149935237,
   "minimumMacOS": "15.0"
 }
