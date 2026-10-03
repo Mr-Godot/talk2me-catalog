@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.3",
+  "version": "2.21.4",
   "date": "2026-10-03",
-  "notes": "Your words starts with talk2me's own name only. It used to arrive with five names that meant something only to us.\nBefore macOS has asked anything, the microphone line says \"macOS will ask you\", not \"asks you again\".\nThe tour's card stays with the part of Home it points at when Home moves under it.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.3/talk2me-2.21.3-macos-arm64.zip",
-  "sha256": "9db8f5e917b79324323f770556e9aad76881cda1ccd08d755a9e287bfc04c988",
-  "size": 149935237,
+  "notes": "Opened talk2me straight from Downloads? Home offers to move it to Applications, so updates can install. The copy in Downloads stays until you delete it. Update now also works from a copy that macOS runs from a locked place, or says plainly what to do.\nHome and the tour name the same voice model from the first second: the one being downloaded for your Mac. Until it lands, Home says the starter voice is standing in.\nThe day your full voice model lands, Home says so once: \"Your full voice model is here.\"",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.4/talk2me-2.21.4-macos-arm64.zip",
+  "sha256": "1af34901fa7dd46ea2530e08a98fb4aa0d115603eba253c6cce746162fd54737",
+  "size": 150018841,
   "minimumMacOS": "15.0"
 }
