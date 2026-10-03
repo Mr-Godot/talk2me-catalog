@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.1",
+  "version": "2.21.2",
   "date": "2026-10-03",
-  "notes": "talk2me no longer quits when you allow the microphone or Accessibility during the tour. The crash came from a status line that went blank while macOS was reading the window for its permission prompt, VoiceOver or another app that reads the screen. Every line that is read aloud as it changes is now safe to go blank.\nPicking Deny when macOS asks about the Keychain no longer leaves your shortcut dead until you restart talk2me.\nAn unexpected error inside the window no longer closes talk2me; it is noted in the diagnostic log and the app keeps going.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.1/talk2me-2.21.1-macos-arm64.zip",
-  "sha256": "eb62cda056a5ec9db028f47998e62e1c3ecbaa679184a4f1062e3a3878203ba0",
-  "size": 149930149,
-  "minimumMacOS": "13.0"
+  "notes": "talk2me now needs macOS 15 or later. Its voice models on your Mac cannot load on older macOS, so an older Mac is told up front instead of downloading a voice that cannot run. Every Mac with Apple silicon can update to macOS 15 for free.\nDeleting a cleanup model that runs on your Mac's GPU no longer freezes the window while a cleanup finishes.\nIf talk2me cannot start, a window now says so and where the log is, instead of the app vanishing.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.2/talk2me-2.21.2-macos-arm64.zip",
+  "sha256": "ef7de470a83949f6837c1d525527dec04913346fed18a0a38983e6e33f492d0e",
+  "size": 149933635,
+  "minimumMacOS": "15.0"
 }
