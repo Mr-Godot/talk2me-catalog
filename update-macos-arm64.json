@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.5",
-  "date": "2026-10-04",
-  "notes": "Switching talk2me on in Accessibility no longer loops. talk2me never clears its own entry after you have been to System Settings, and when macOS needs a restart to show the yes, it restarts once by itself.\nYour shortcut works while another copy of talk2me is open. If that copy has the shortcut, Home and the tour say where it is and offer \"Quit the other talk2me\", and talk2me takes the shortcut back by itself.\nA press with no text field to type into says \"Click in a text field first\", and the menu bar icon stays at rest. A press while Accessibility is off says so and keeps the steps on Home.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.5/talk2me-2.21.5-macos-arm64.zip",
-  "sha256": "451e149681806b22974a05533178018f17e76270451e702050179f963085f712",
-  "size": 150070268,
+  "version": "2.21.6",
+  "date": "2026-10-05",
+  "notes": "Sentences end with their period, question mark or exclamation mark again on Whisper Large v3 Turbo, also when you have saved words.\nFrench is typed as French more often when talk2me picks the language by itself.\nNew: spoken punctuation in English and French. Say \"comma\", \"period\", \"new line\" or \"virgule\", \"point\", \"à la ligne\", and talk2me types the mark. It is off by default: turn on \"Write spoken punctuation\" in Settings > Writing.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.6/talk2me-2.21.6-macos-arm64.zip",
+  "sha256": "d9993a27d2e96cda83c239dab04d76c60cede6b268ed210b2b8ffc4c57b83fe5",
+  "size": 150160915,
   "minimumMacOS": "15.0"
 }
