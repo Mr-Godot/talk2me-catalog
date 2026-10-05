@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.6",
+  "version": "2.21.7",
   "date": "2026-10-05",
-  "notes": "Sentences end with their period, question mark or exclamation mark again on Whisper Large v3 Turbo, also when you have saved words.\nFrench is typed as French more often when talk2me picks the language by itself.\nNew: spoken punctuation in English and French. Say \"comma\", \"period\", \"new line\" or \"virgule\", \"point\", \"à la ligne\", and talk2me types the mark. It is off by default: turn on \"Write spoken punctuation\" in Settings > Writing.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.6/talk2me-2.21.6-macos-arm64.zip",
-  "sha256": "d9993a27d2e96cda83c239dab04d76c60cede6b268ed210b2b8ffc4c57b83fe5",
-  "size": 150160915,
+  "notes": "A new ring: the Dock icon, the ring in the window and the ring on screen while you dictate are now one even, round ring.\nWhen talk2me needs you, the menu bar icon is the ring filled in, with an exclamation mark cut out of it, in place of the triangle.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.7/talk2me-2.21.7-macos-arm64.zip",
+  "sha256": "ccf93c27116dc90e0bd63b3e6ed1a122c0407f5cc9e7a2b89607a3db0654ec99",
+  "size": 150196089,
   "minimumMacOS": "15.0"
 }
