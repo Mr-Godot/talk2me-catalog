@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.4",
-  "date": "2026-10-03",
-  "notes": "Opened talk2me straight from Downloads? Home offers to move it to Applications, so updates can install. The copy in Downloads stays until you delete it. Update now also works from a copy that macOS runs from a locked place, or says plainly what to do.\nHome and the tour name the same voice model from the first second: the one being downloaded for your Mac. Until it lands, Home says the starter voice is standing in.\nThe day your full voice model lands, Home says so once: \"Your full voice model is here.\"",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.4/talk2me-2.21.4-macos-arm64.zip",
-  "sha256": "1af34901fa7dd46ea2530e08a98fb4aa0d115603eba253c6cce746162fd54737",
-  "size": 150018841,
+  "version": "2.21.5",
+  "date": "2026-10-04",
+  "notes": "Switching talk2me on in Accessibility no longer loops. talk2me never clears its own entry after you have been to System Settings, and when macOS needs a restart to show the yes, it restarts once by itself.\nYour shortcut works while another copy of talk2me is open. If that copy has the shortcut, Home and the tour say where it is and offer \"Quit the other talk2me\", and talk2me takes the shortcut back by itself.\nA press with no text field to type into says \"Click in a text field first\", and the menu bar icon stays at rest. A press while Accessibility is off says so and keeps the steps on Home.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.5/talk2me-2.21.5-macos-arm64.zip",
+  "sha256": "451e149681806b22974a05533178018f17e76270451e702050179f963085f712",
+  "size": 150070268,
   "minimumMacOS": "15.0"
 }
