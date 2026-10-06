@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.9",
+  "version": "2.21.10",
   "date": "2026-10-06",
-  "notes": "The tour ends after the two macOS permissions: no more practice dictation step to get stuck on.\nOn a metered connection, Home offers Download now for the voice model.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.9/talk2me-2.21.9-macos-arm64.zip",
-  "sha256": "d95df3f435e5a08add7eaee989007aa91bd5a3884cd080b89dec32589bc1aa81",
-  "size": 150982591,
+  "notes": "A warmer welcome: three short lines under the ring say why talk2me is worth keeping.\nHome says clearly whether your voice stays on this Mac.\ntalk2me never turns Start at login back on after you switch it off.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.10/talk2me-2.21.10-macos-arm64.zip",
+  "sha256": "456fedc33fabc3de14c0ead197ecbdac17d9a7f417b19c1d930c7a96472d02e9",
+  "size": 150988902,
   "minimumMacOS": "15.0"
 }
