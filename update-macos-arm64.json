@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.8",
-  "date": "2026-10-05",
-  "notes": "A press with nothing said no longer types \"Thank you.\" or other made-up words.\nIf talk2me hears no speech, nothing is typed; the words stay in Recent results with Copy, in case you did speak.\nQuiet speech that talk2me sometimes took for silence is now typed.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.8/talk2me-2.21.8-macos-arm64.zip",
-  "sha256": "f8495381b2539e33fc41a12c454eb2a168757ec55b0a2d455c1ce66843c1b7d4",
-  "size": 151034243,
+  "version": "2.21.9",
+  "date": "2026-10-06",
+  "notes": "The tour ends after the two macOS permissions: no more practice dictation step to get stuck on.\nOn a metered connection, Home offers Download now for the voice model.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.9/talk2me-2.21.9-macos-arm64.zip",
+  "sha256": "d95df3f435e5a08add7eaee989007aa91bd5a3884cd080b89dec32589bc1aa81",
+  "size": 150982591,
   "minimumMacOS": "15.0"
 }
