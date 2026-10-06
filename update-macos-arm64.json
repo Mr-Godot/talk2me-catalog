@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.7",
+  "version": "2.21.8",
   "date": "2026-10-05",
-  "notes": "A new ring: the Dock icon, the ring in the window and the ring on screen while you dictate are now one even, round ring.\nWhen talk2me needs you, the menu bar icon is the ring filled in, with an exclamation mark cut out of it, in place of the triangle.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.7/talk2me-2.21.7-macos-arm64.zip",
-  "sha256": "ccf93c27116dc90e0bd63b3e6ed1a122c0407f5cc9e7a2b89607a3db0654ec99",
-  "size": 150196089,
+  "notes": "A press with nothing said no longer types \"Thank you.\" or other made-up words.\nIf talk2me hears no speech, nothing is typed; the words stay in Recent results with Copy, in case you did speak.\nQuiet speech that talk2me sometimes took for silence is now typed.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.8/talk2me-2.21.8-macos-arm64.zip",
+  "sha256": "f8495381b2539e33fc41a12c454eb2a168757ec55b0a2d455c1ce66843c1b7d4",
+  "size": 151034243,
   "minimumMacOS": "15.0"
 }
