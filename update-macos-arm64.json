@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.10",
+  "version": "2.21.11",
   "date": "2026-10-06",
-  "notes": "A warmer welcome: three short lines under the ring say why talk2me is worth keeping.\nHome says clearly whether your voice stays on this Mac.\ntalk2me never turns Start at login back on after you switch it off.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.10/talk2me-2.21.10-macos-arm64.zip",
-  "sha256": "456fedc33fabc3de14c0ead197ecbdac17d9a7f417b19c1d930c7a96472d02e9",
-  "size": 150988902,
+  "notes": "The welcome is easier to read: bigger, slower, with a Skip.\nEvery tour, including a replay, ends on Home.",
+  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.11/talk2me-2.21.11-macos-arm64.zip",
+  "sha256": "1da582b5e3dbc144cd99aa35ffb76fecb200a9568d9db632e3f6e934eb30d78a",
+  "size": 150998415,
   "minimumMacOS": "15.0"
 }
