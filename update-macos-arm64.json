@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.12",
+  "version": "2.21.13",
   "date": "2026-10-10",
-  "notes": "A calm, one-time question in the tour: can we count a few numbers? \"Yes, count me in\" and \"Not now\" have the same weight, nothing is counted until you say yes, and it is never asked again. If you finished setup earlier, Home asks once.\nSettings > Privacy > \"What is sent\" shows your random ID (with a reset), the exact events sent last and every event talk2me can send, with a link to talk-2.dev/privacy. Saying no stops everything at once and deletes your ID from our server.\nSend feedback in Settings > Advanced: your message, an e-mail only if you want a reply, and your diagnostics log only if you tick it. It works with counting off.",
-  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.12-macos-arm64.zip",
-  "sha256": "dbc54a6e8fa7d1bd9626bc683fd91e65e36d771c36fad87b3cc095e390b5e5fc",
-  "size": 151121133,
+  "notes": "talk2me no longer types a language you do not speak. It listens only for your languages; if a stray language still comes through, it tries again in yours, or asks you to say it again.\nA new question in the tour: which languages do you speak? You can change the answer in Settings > Voice. The model list then shows only the models that hear your languages. If you set up talk2me earlier, Home asks once to confirm your languages.\nRepeated words are removed when filler words are removed: \"the the\" becomes \"the\". A stutter is no longer typed as \"2D\".",
+  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.13-macos-arm64.zip",
+  "sha256": "192ebcd026238cfb32de89780631bd1b6431ee7bb78545d335fc52c9afc00d1b",
+  "size": 154805334,
   "minimumMacOS": "15.0"
 }
