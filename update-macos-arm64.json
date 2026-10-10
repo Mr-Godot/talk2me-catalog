@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.11",
-  "date": "2026-10-06",
-  "notes": "The welcome is easier to read: bigger, slower, with a Skip.\nEvery tour, including a replay, ends on Home.",
-  "url": "https://github.com/Mr-Godot/talk2me-catalog/releases/download/talk2me-2.21.11/talk2me-2.21.11-macos-arm64.zip",
-  "sha256": "1da582b5e3dbc144cd99aa35ffb76fecb200a9568d9db632e3f6e934eb30d78a",
-  "size": 150998415,
+  "version": "2.21.12",
+  "date": "2026-10-10",
+  "notes": "A calm, one-time question in the tour: can we count a few numbers? \"Yes, count me in\" and \"Not now\" have the same weight, nothing is counted until you say yes, and it is never asked again. If you finished setup earlier, Home asks once.\nSettings > Privacy > \"What is sent\" shows your random ID (with a reset), the exact events sent last and every event talk2me can send, with a link to talk-2.dev/privacy. Saying no stops everything at once and deletes your ID from our server.\nSend feedback in Settings > Advanced: your message, an e-mail only if you want a reply, and your diagnostics log only if you tick it. It works with counting off.",
+  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.12-macos-arm64.zip",
+  "sha256": "dbc54a6e8fa7d1bd9626bc683fd91e65e36d771c36fad87b3cc095e390b5e5fc",
+  "size": 151121133,
   "minimumMacOS": "15.0"
 }
