@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.15",
+  "version": "2.21.16",
   "date": "2026-10-14",
-  "notes": "Crash fix: talk2me no longer crashes when another app puts a very large clipboard (thousands of files) in place during a dictation. A clipboard too large to copy and put back is left alone, with a clear message.\nThe last dictation stays on the clipboard of this Mac, so Command-V pastes it again if the focus moved to another window. On by default; turn it off in Settings.\nHome: a gear for Settings, a Languages line with your languages, and \"100% private\" under the title. Send feedback is now the last item in Advanced.",
-  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.15-macos-arm64.zip",
-  "sha256": "24fc6b00f7e12fccc0af235b73e3bee6fc878868789759461395562e0b93bb25",
-  "size": 158614463,
+  "notes": "The ring moves again: the moving distortion on the Home ring, the tour ring and the floating ring is back. Reduce motion still holds it still.\nHome is calmer: the Settings gear sits at the top-right corner, \"100% private\" at the top-left, and Home shows the total number of words you have dictated.\nSettings has less to read. One switch, \"Check for updates automatically\", checks at each start and once a day. The Timing section is gone, and its values go back to the defaults. Send feedback moved to a new Help section after Advanced.",
+  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.16-macos-arm64.zip",
+  "sha256": "e55a4061a42686dbc5b2742b056aac9c04ae9282ba30ebc34131a0a712fd994e",
+  "size": 158923738,
   "minimumMacOS": "15.0"
 }
