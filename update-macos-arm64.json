@@ -2,11 +2,11 @@
   "feed": "talk2me-update",
   "feedVersion": 1,
   "platform": "macos-arm64",
-  "version": "2.21.16",
+  "version": "2.21.17",
   "date": "2026-10-14",
-  "notes": "The ring moves again: the moving distortion on the Home ring, the tour ring and the floating ring is back. Reduce motion still holds it still.\nHome is calmer: the Settings gear sits at the top-right corner, \"100% private\" at the top-left, and Home shows the total number of words you have dictated.\nSettings has less to read. One switch, \"Check for updates automatically\", checks at each start and once a day. The Timing section is gone, and its values go back to the defaults. Send feedback moved to a new Help section after Advanced.",
-  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.16-macos-arm64.zip",
-  "sha256": "e55a4061a42686dbc5b2742b056aac9c04ae9282ba30ebc34131a0a712fd994e",
-  "size": 158923738,
+  "notes": "Shortcut fix: when you allow Accessibility while talk2me runs, the shortcut now works at once. Before, it stayed silent until you quit and reopened talk2me, while Home said \"Ready\". This happened after the update to 2.21.16.\nHome: \"Talk to me, I'll type.\" sits on one line with the Settings gear, and the cards start right under it. The privacy tag on the voice card stays.\nSettings > Writing is shorter: Voice commands, Press Enter by voice and Write laughs and sighs the same way are hidden for now. Your choices for them do not change.",
+  "url": "https://talk-2.dev/feed/zips/talk2me-2.21.17-macos-arm64.zip",
+  "sha256": "b2643d0ddf1795c28c5b2bc4b4777378bd4dd1dfcb36854e963b89b9687ce6b1",
+  "size": 158924618,
   "minimumMacOS": "15.0"
 }
